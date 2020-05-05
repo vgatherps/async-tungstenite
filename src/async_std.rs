@@ -203,6 +203,8 @@ where
     client_async_tls_with_connector_and_config(request, stream, connector, None).await
 }
 
+pub type AsyncStdWebSocketStream = WebSocketStream<AutoStream<TcpStream>>;
+
 /// Connect to a given URL.
 pub async fn connect_async<R>(
     request: R,

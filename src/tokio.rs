@@ -201,6 +201,9 @@ where
     client_async_tls_with_connector_and_config(request, stream, connector, None).await
 }
 
+
+pub type TokioWebSocketStream = WebSocketStream<AutoStream<TokioAdapter<TcpStream>>>;
+
 /// Connect to a given URL.
 pub async fn connect_async<R>(
     request: R,
